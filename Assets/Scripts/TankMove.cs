@@ -4,11 +4,8 @@ public class TankMove : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed = 1.5f;
     [SerializeField] private float _rotationSpeed = 1.5f;
-    private Transform _rb;
-    void Start()
-    {
-        _rb = GetComponent<Transform>(); 
-    }
+    [SerializeField] private Transform _gmTransform;
+    
     void FixedUpdate()
     {
         Move();
@@ -19,15 +16,15 @@ public class TankMove : MonoBehaviour
     {
         float vert = Input.GetAxis("Vertical");
         Vector3 move = new Vector2(0 , vert);
-        _rb.Translate(move * _moveSpeed);
+        _gmTransform.Translate(move * _moveSpeed);
     }
 
     private void Rotate()
     {
-        float R = Input.GetAxis("Horizontal") * _rotationSpeed;
-        Quaternion RotateAngle = Quaternion.Euler(0, 0, -R);
+        float r = Input.GetAxis("Horizontal") * _rotationSpeed;
+        Quaternion rotateAngle = Quaternion.Euler(0, 0, -r);
 
-        Quaternion CurrentAngle = RotateAngle * _rb.transform.rotation;
-        _rb.transform.rotation = CurrentAngle;
+        Quaternion currentAngle = rotateAngle * _gmTransform.transform.rotation;
+        _gmTransform.transform.rotation = currentAngle;
     }
 }
