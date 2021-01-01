@@ -1,24 +1,27 @@
 ﻿using UnityEngine;
 
-public class CameraMove : MonoBehaviour
+namespace CameraControll
 {
-    [SerializeField] private Transform _playerTransform;
-    [SerializeField] private float _movingSpeed;
-
-    private void Update()
+    public class CameraMove : MonoBehaviour
     {
-        if(this._playerTransform)
+        [SerializeField] private Transform _playerTransform;
+        [SerializeField] private float _movingSpeed;
+
+        private void Update()
         {
-            Vector3 target = new Vector3()
+            if (this._playerTransform)
             {
-                x = this._playerTransform.position.x,
-                y = this._playerTransform.position.y,
-                z = this._playerTransform.position.z - 10,
-            };
+                Vector3 target = new Vector3()
+                {
+                    x = this._playerTransform.position.x,
+                    y = this._playerTransform.position.y,
+                    z = this._playerTransform.position.z - 10,
+                };
 
-            Vector3 pos = Vector3.Lerp(a: this.transform.position, b: target, t: this._movingSpeed * Time.deltaTime);
+                Vector3 pos = Vector3.Lerp(this.transform.position, target, this._movingSpeed * Time.deltaTime);
 
-            this.transform.position = pos;
+                this.transform.position = pos;
+            }
         }
     }
 }

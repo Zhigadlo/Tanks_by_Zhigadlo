@@ -202,9 +202,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 357546055}
-  - component: {fileID: 357546056}
   - component: {fileID: 357546058}
   - component: {fileID: 357546057}
+  - component: {fileID: 357546060}
+  - component: {fileID: 357546059}
+  - component: {fileID: 357546056}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -237,12 +239,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 357546054}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78512613549948b40b33177e6e52091d, type: 3}
+  m_Script: {fileID: 11500000, guid: d96b85ba7c5ca3a47b1c13b164be62b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 0.05
-  _rotationSpeed: 0.5
-  _gmTransform: {fileID: 357546055}
+  Tower: {fileID: 672908982}
 --- !u!61 &357546057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -290,6 +290,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &357546059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357546054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78512613549948b40b33177e6e52091d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveSpeed: 0.05
+  _rotationSpeed: 0.5
+  _gmTransform: {fileID: 357546055}
+--- !u!114 &357546060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 357546054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b390dc9ef7315bb4dbd124e93bd03a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &450822731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -498,7 +525,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerTransform: {fileID: 357546055}
-  _playerTag: 
   _movingSpeed: 8
 --- !u!1 &672908982
 GameObject:
