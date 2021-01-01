@@ -206,7 +206,6 @@ GameObject:
   - component: {fileID: 357546057}
   - component: {fileID: 357546060}
   - component: {fileID: 357546059}
-  - component: {fileID: 357546056}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -230,19 +229,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &357546056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 357546054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d96b85ba7c5ca3a47b1c13b164be62b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Tower: {fileID: 672908982}
 --- !u!61 &357546057
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -620,7 +606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d96b85ba7c5ca3a47b1c13b164be62b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tower: {fileID: 672908982}
+  _transformObject: {fileID: 672908983}
+  _towerRotateSpeed: 0.05
 --- !u!1 &929014922
 GameObject:
   m_ObjectHideFlags: 0
