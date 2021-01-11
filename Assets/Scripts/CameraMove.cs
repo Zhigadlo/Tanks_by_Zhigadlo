@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 
-namespace CameraControll
+namespace Scripts
 {
     public class CameraMove : MonoBehaviour
     {
         [SerializeField] private Transform _playerTransform;
         [SerializeField] private float _movingSpeed;
 
-        private void Update()
+        private void FixedUpdate()
         {
             if (this._playerTransform)
             {
@@ -18,7 +18,7 @@ namespace CameraControll
                     z = this._playerTransform.position.z - 10,
                 };
 
-                Vector3 pos = Vector3.Lerp(this.transform.position, target, this._movingSpeed * Time.deltaTime);
+                Vector3 pos = Vector3.Lerp(this.transform.position, target, this._movingSpeed);
 
                 this.transform.position = pos;
             }

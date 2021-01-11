@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TankControll
+namespace Scripts
 {
     public class TankTowerRotate : MonoBehaviour
     {
@@ -12,6 +12,7 @@ namespace TankControll
         {
             _transformObject = this.transform;
         }
+
         private void TowerRotate()
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);

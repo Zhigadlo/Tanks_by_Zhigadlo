@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 
-namespace TankControll
+namespace Scripts
 {
     public class TankMove : MonoBehaviour
     {
-        [SerializeField] private float _moveSpeed = 1.5f;
-        [SerializeField] private float _rotationSpeed = 1.5f;
+        [SerializeField] private float _moveSpeed = 0.1f;
+        [SerializeField] private float _rotationSpeed = 0.1f;
         [SerializeField] private Transform _gmTransform;
 
         private void Move()
