@@ -9,7 +9,6 @@
         private void Awake()
         {
             bulletFire = GetComponent<BulletFire>();
-
         }
 
         private void FixedUpdate()

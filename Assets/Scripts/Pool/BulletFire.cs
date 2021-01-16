@@ -22,7 +22,7 @@
 
         GameObject CreateBullet()
         {
-            GameObject obj = (GameObject)Instantiate(_bullet, transform.position, Quaternion.identity);
+            GameObject obj = Instantiate(_bullet, transform.position, Quaternion.identity);
             obj.SetActive(false);
             bullets.Add(obj);
             return obj;
@@ -54,13 +54,14 @@
                 if(newBullet != null)
                 {
                     newBullet.transform.position = transform.position;
+                    newBullet.transform.rotation = transform.rotation;
                     newBullet.SetActive(true);
                     pause = 20;
                 }
             }
         }
 
-        private void Update()
+        private void FixedUpdate()
         {
             if(pause > 0)
             {
