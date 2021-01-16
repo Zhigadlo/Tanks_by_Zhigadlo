@@ -1,7 +1,6 @@
-﻿using UnityEngine;
-
-namespace Scripts
+﻿namespace Scripts
 {
+    using UnityEngine;
     public class TankMove : MonoBehaviour
     {
         [SerializeField] private float _moveSpeed = 0.1f;

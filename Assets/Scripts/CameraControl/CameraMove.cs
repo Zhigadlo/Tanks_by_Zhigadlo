@@ -1,7 +1,6 @@
-﻿using UnityEngine;
-
-namespace Scripts
+﻿namespace Scripts
 {
+    using UnityEngine;
     public class CameraMove : MonoBehaviour
     {
         [SerializeField] private Transform _playerTransform;
