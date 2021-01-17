@@ -6,11 +6,6 @@
     {
         [SerializeField] private float _speed = 5f;
 
-        private void OnEnable()
-        {
-            Invoke("Diactivate", 3f);
-        }
-
         private void Diactivate()
         {
             gameObject.SetActive(false);
@@ -19,6 +14,12 @@
         private void FixedUpdate()
         {
             transform.Translate(0f, _speed, 0f);
+            
+        }
+
+        private void OnCollisionEnter2D()
+        {
+            Diactivate();
         }
     }
 }
