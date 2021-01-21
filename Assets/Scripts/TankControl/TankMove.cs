@@ -12,6 +12,7 @@
             float vert = Input.GetAxis("Vertical");
             Vector3 move = new Vector2(0, vert);
             _gmTransform.Translate(move * _moveSpeed);
+            //_gmTransform.velocity = new Vector2(_gmTransform.velocity.x, vert * _moveSpeed);
         }
 
         private void Rotate()
