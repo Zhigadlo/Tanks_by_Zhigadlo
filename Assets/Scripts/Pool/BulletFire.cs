@@ -5,16 +5,16 @@
 
     public class BulletFire : MonoBehaviour
     {
-        [SerializeField] private int pause = 50;
+        [SerializeField] private int _pause = 50;
         [SerializeField] private GameObject _bullet;
-        [SerializeField] private int bulletCount = 10;
-        [SerializeField] private bool willGrow = false;
+        [SerializeField] private int _bulletCount = 10;
+        [SerializeField] private bool _willGrow = false;
 
-        [SerializeField] private List<GameObject> bullets = new List<GameObject>();
+        [SerializeField] private List<GameObject> _bullets = new List<GameObject>();
 
         private void Awake()
         {
-            for (int i = 0; i < bulletCount; ++i)
+            for (int i = 0; i < _bulletCount; ++i)
             {
                 CreateBullet();
             }
@@ -24,21 +24,21 @@
         {
             GameObject obj = Instantiate(_bullet, transform.position, Quaternion.identity);
             obj.SetActive(false);
-            bullets.Add(obj);
+            _bullets.Add(obj);
             return obj;
         }
 
         GameObject GetPooledObject()
         {
-            for(int i = 0; i < bullets.Count; ++i)
+            for(int i = 0; i < _bullets.Count; ++i)
             {
-                if(!bullets[i].activeSelf)
+                if(!_bullets[i].activeSelf)
                 {
-                    return bullets[i];
+                    return _bullets[i];
                 }
             }
 
-            if(willGrow)
+            if(_willGrow)
             {
                 return CreateBullet();
             }
@@ -48,7 +48,7 @@
 
         public void Fire()
         {
-            if(pause <= 0)
+            if(_pause <= 0)
             {
                 GameObject newBullet = GetPooledObject();
                 if(newBullet != null)
@@ -56,16 +56,16 @@
                     newBullet.transform.position = transform.position;
                     newBullet.transform.rotation = transform.rotation;
                     newBullet.SetActive(true);
-                    pause = 20;
+                    _pause = 20;
                 }
             }
         }
 
         private void FixedUpdate()
         {
-            if(pause > 0)
+            if(_pause > 0)
             {
-                pause -= 1;
+                _pause -= 1;
             }
         }
     }
