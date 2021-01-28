@@ -1,11 +1,16 @@
 ﻿namespace Pool
 {
     using UnityEngine;
-
-    public class Bullet : MonoBehaviour
+    public class MortarBullet : MonoBehaviour
     {
         [SerializeField] private float _speed = 5f;
         [SerializeField] private Rigidbody2D _rb;
+        private Vector3 _endPosition;
+
+        private void Start()
+        {
+            _endPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
         private void Diactivate()
         {
             gameObject.SetActive(false);
@@ -13,10 +18,7 @@
 
         private void FixedUpdate()
         {
-            //transform.Translate(0f, _speed, 0f);
-            Vector2 direction = Vector2.up;
-            _rb.AddRelativeForce(direction * _speed);
-            
+            transform.position = Vector3.MoveTowards(transform.position, _endPosition, _speed);
         }
 
         private void OnCollisionEnter2D()

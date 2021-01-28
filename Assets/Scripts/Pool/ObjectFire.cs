@@ -4,7 +4,6 @@
 
     public class ObjectFire : MonoBehaviour
     {
-        [SerializeField] private float _speed = 2f;
         BulletFire bulletFire;
         private void Awake()
         {
